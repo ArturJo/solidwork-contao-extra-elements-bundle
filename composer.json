@@ -1,6 +1,6 @@
 {
   "name": "solidwork/contao-extra-elements-bundle",
-  "description": "Contao 5.3 bundle providing custom content elements and (later) frontend modules.",
+  "description": "Contao 5.3 bundle providing custom content elements and (later) frontend modules. Initial: Title + Subtitle element with order and heading level.",
   "type": "contao-bundle",
   "license": "MIT",
   "keywords": [
@@ -36,13 +36,6 @@
     "contao-manager-plugin": "SolidWork\\ContaoExtraElementsBundle\\ContaoManager\\Plugin",
     "branch-alias": {
       "dev-main": "0.1.x-dev"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "contao-components/installer": true,
-      "php-http/discovery": true,
-      "contao/manager-plugin": true
     }
   }
 }
