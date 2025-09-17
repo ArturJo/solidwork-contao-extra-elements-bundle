@@ -1,5 +1,0 @@
-services:
-  SolidWork\ContaoExtraElementsBundle\ContentElement\TitleSubtitleElement:
-    public: true
-    tags:
-      - { name: 'contao.content_element', category: 'solidwork', template: 'ce_title_subtitle', type: 'sowo_title_subtitle' }
