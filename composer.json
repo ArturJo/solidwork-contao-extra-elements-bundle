@@ -26,6 +26,7 @@
     "contao/core-bundle": "^5.3",
     "contao/manager-bundle": "^5.3"
   },
+  "version": "0.6.12",
   "autoload": {
     "psr-4": {
       "SolidWork\\ContaoExtraElementsBundle\\": "src/"
