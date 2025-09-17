@@ -5,8 +5,8 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['title_subtitle'] =
     '{type_legend},type,headline;{text_legend},title,subtitle,subtitle_position,headline_level;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 // Felder definieren
-$GLOBALS['TL_DCA']['tl_content']['fields']['title'] = [
-    'label' => &$GLOBALS['TL_LANG']['tl_content']['title'],
+$GLOBALS['TL_DCA']['tl_content']['fields']['sowoTitle'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_content']['sowoTitle'],
     'exclude' => true,
     'search' => true,
     'inputType' => 'textarea',
@@ -18,8 +18,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['title'] = [
     ],
     'sql' => 'mediumtext NULL',
 ];
-$GLOBALS['TL_DCA']['tl_content']['fields']['subtitle'] = [
-    'label' => &$GLOBALS['TL_LANG']['tl_content']['subtitle'],
+$GLOBALS['TL_DCA']['tl_content']['fields']['sowoSubtitle'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_content']['sowoSubtitle'],
     'exclude' => true,
     'search' => true,
     'inputType' => 'textarea',
@@ -32,20 +32,20 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['subtitle'] = [
     'sql' => 'mediumtext NULL',
 ];
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['subtitle_position'] = [
-    'label' => &$GLOBALS['TL_LANG']['tl_content']['subtitle_position'],
+$GLOBALS['TL_DCA']['tl_content']['fields']['sowoSubtitle_position'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_content']['sowoSubtitle_position'],
     'exclude' => true,
     'inputType' => 'select',
     'options' => ['above', 'below'],
-    'reference' => &$GLOBALS['TL_LANG']['tl_content']['subtitle_position_ref'],
+    'reference' => &$GLOBALS['TL_LANG']['tl_content']['sowoSubtitle_position_ref'],
     'eval' => [
         'includeBlankOption' => false,
         'tl_class' => 'w50',
     ],
     'sql' => "varchar(16) NOT NULL default 'below'",
 ];
-$GLOBALS['TL_DCA']['tl_content']['fields']['headline_level'] = [
-    'label' => &$GLOBALS['TL_LANG']['tl_content']['headline_level'],
+$GLOBALS['TL_DCA']['tl_content']['fields']['sowoHeadline_level'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_content']['sowoHeadline_level'],
     'exclude' => true,
     'inputType' => 'select',
     'options' => ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
