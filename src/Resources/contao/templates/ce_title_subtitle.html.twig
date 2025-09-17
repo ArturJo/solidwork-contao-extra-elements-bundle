@@ -1,20 +1,20 @@
-{# Variables: title (HTML), subtitle (HTML), subtitle_position ('above'|'below'), headline_level ('h1'..'h6') #}
+{# Variables: sowo_title (HTML), sowo_subtitle (HTML), sowo_subtitle_position ('above'|'below'), sowo_headline_level ('h1'..'h6') #}
 {% set allowed = ['h1','h2','h3','h4','h5','h6'] %}
-{% set tag = sowoHeadline_level in allowed ? sowoHeadline_level : 'h2' %}
-{% set isAbove = sowoSubtitle_position == 'above' %}
+{% set tag = sowo_headline_level in allowed ? sowo_headline_level : 'h2' %}
+{% set isAbove = sowo_subtitle_position == 'above' %}
 
 {% if isAbove %}
     <div class="headline-subline headline-subline--top">
-        <span class="headline-subline--top-text">{{ sowoSubtitle|raw }}</span>
+        <span class="headline-subline--top-text">{{ sowo_subtitle|raw }}</span>
     </div>
 {% endif %}
 
 <{{ tag }} class="content-headline headline-title mb-2">
-{{ sowoTitle|raw }}
+{{ sowo_title|raw }}
 </{{ tag }}>
 
 {% if not isAbove %}
     <div class="headline-subline headline-subline--bottom">
-        <span class="headline-subline--bottom-text">{{ sowoSubtitle|raw }}</span>
+        <span class="headline-subline--bottom-text">{{ sowo_subtitle|raw }}</span>
     </div>
 {% endif %}
