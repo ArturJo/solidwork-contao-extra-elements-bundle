@@ -1,0 +1,73 @@
+# --------------------------------------------------------
+# Allgemein
+# --------------------------------------------------------
+*.log
+*.cache
+*.tmp
+*.bak
+*.swp
+
+# --------------------------------------------------------
+# macOS
+# --------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon?
+Icon?
+# Thumbnails
+._*
+# Spotlight
+.Spotlight-V100
+.Trashes
+# Time Machine
+.TemporaryItems
+.fseventsd
+
+# --------------------------------------------------------
+# Composer
+# --------------------------------------------------------
+/vendor/
+/composer.lock
+
+# --------------------------------------------------------
+# Symfony/Contao
+# --------------------------------------------------------
+/var/
+/node_modules/
+/public/bundles/
+/public/build/
+/public/assets/
+/translations/*.mo
+.cache
+.env
+.env.local
+.env.*.local
+
+# --------------------------------------------------------
+# Tests/CI
+# --------------------------------------------------------
+/phpunit.xml
+/phpunit.xml.dist
+/.phpunit.result.cache
+/coverage/
+/phpstan.neon
+/psalm.xml
+/.php_cs
+/.php_cs.cache
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+
+# --------------------------------------------------------
+# IDE / Editor
+# --------------------------------------------------------
+.idea/
+/.vscode/
+/*.iml
+
+# --------------------------------------------------------
+# OS-spezifisch Windows
+# --------------------------------------------------------
+Thumbs.db
+ehthumbs.db
