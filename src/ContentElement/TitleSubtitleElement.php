@@ -2,21 +2,26 @@
 // src/ContentElement/TitleSubtitleElement.php
 namespace SolidWork\ContaoExtraElementsBundle\ContentElement;
 
-use Contao\ContentElement;
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(
     category: 'solidwork',
-    type: 'sowo_title_subtitle',
-    template: 'ce_title_subtitle'
+    type: 'sowo_title_subtitle'
 )]
-final class TitleSubtitleElement extends ContentElement
+class TitleSubtitleElement extends AbstractContentElementController
 {
-    protected function compile(): void
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        $this->Template->sowo_title = (string)($this->sowo_title ?? '');
-        $this->Template->sowo_subtitle = (string)($this->sowo_subtitle ?? '');
-        $this->Template->sowo_subtitle_position = (string)($this->sowo_subtitle_position ?? 'below');
-        $this->Template->sowo_headline_level = (string)($this->sowo_headline_level ?? 'h2');
+        $template->sowo_title = $model->sowo_title ?? '';
+        $template->sowo_subtitle = $model->sowo_subtitle ?? '';
+        $template->sowo_subtitle_position = $model->sowo_subtitle_position ?? 'below';
+        $template->sowo_headline_level = $model->sowo_headline_level ?? 'h2';
+
+        return $template->getResponse();
     }
 }
