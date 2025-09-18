@@ -1,30 +1,29 @@
+{% extends '@Contao/content_element/_base.html.twig' %}
 {# Variables: sowo_title (HTML), sowo_subtitle (HTML), sowo_subtitle_position ('above'|'below'), sowo_headline_level ('h1'..'h6') #}
 {% set allowed = ['h1','h2','h3','h4','h5','h6'] %}
 {% set tag = sowo_headline_level in allowed ? sowo_headline_level : 'h2' %}
 {% set isAbove = sowo_subtitle_position == 'above' %}
 
-{% block ce_title_subtitle %}
-    <div class="{{ class }}"{{ cssID|raw }}>
-        {% block subtitle_top %}
-            {% if isAbove %}
-                <div class="{% block subtitle_top_class %}sowo-headline-subline sowo-headline-subline--top{% endblock %}">
-                    <span class="{% block subtitle_top_text_class %}sowo-headline-subline--top-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
-                </div>
-            {% endif %}
-        {% endblock %}
+{% block content %}
+    {% block subtitle_top %}
+        {% if isAbove %}
+            <div class="{% block subtitle_top_class %}sowo-headline-subline sowo-headline-subline--top{% endblock %}">
+                <span class="{% block subtitle_top_text_class %}sowo-headline-subline--top-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
+            </div>
+        {% endif %}
+    {% endblock %}
 
-        {% block title %}
-            <{{ tag }} class="{% block title_class %}content-headline headline-title{% endblock %}">
-            {{ sowo_title|raw }}
-            </{{ tag }}>
-        {% endblock %}
+    {% block title %}
+        <{{ tag }} class="{% block title_class %}content-headline headline-title{% endblock %}">
+        {{ sowo_title|raw }}
+        </{{ tag }}>
+    {% endblock %}
 
-        {% block subtitle_bottom %}
-            {% if not isAbove %}
-                <div class="{% block subtitle_bottom_class %}sowo-headline-subline sowo-headline-subline--bottom{% endblock %}">
-                    <span class="{% block subtitle_bottom_text_class %}sowo-headline-subline--bottom-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
-                </div>
-            {% endif %}
-        {% endblock %}
-    </div>
+    {% block subtitle_bottom %}
+        {% if not isAbove %}
+            <div class="{% block subtitle_bottom_class %}sowo-headline-subline sowo-headline-subline--bottom{% endblock %}">
+                <span class="{% block subtitle_bottom_text_class %}sowo-headline-subline--bottom-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
+            </div>
+        {% endif %}
+    {% endblock %}
 {% endblock %}
