@@ -13,6 +13,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sowo_title'] = [
     'eval' => [
         'helpwizard' => true,
         'decodeEntities' => true,
+        'allowHtml' => true,
+        'preserveTags' => true,
         'tl_class' => 'clr long',
     ],
     'sql' => 'mediumtext NULL',
@@ -25,6 +27,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sowo_subtitle'] = [
     'eval' => [
         'helpwizard' => true,
         'decodeEntities' => true,
+        'allowHtml' => true,
+        'preserveTags' => true,
         'tl_class' => 'clr long',
     ],
     'sql' => 'mediumtext NULL',
