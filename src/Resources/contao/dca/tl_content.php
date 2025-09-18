@@ -2,7 +2,7 @@
 
 // Palette für den Typ registrieren
 $GLOBALS['TL_DCA']['tl_content']['palettes']['sowo_title_subtitle'] =
-    '{type_legend},type,sowo_title,sowo_subtitle,sowo_subtitle_position,sowo_headline_level;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+    '{type_legend},type,sowo_title,sowo_subtitle,sowo_subtitle_position,sowo_headline_level;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 // Felder definieren
 $GLOBALS['TL_DCA']['tl_content']['fields']['sowo_title'] = [
