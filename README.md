@@ -1,3 +1,7 @@
+<p>
+  <img src="logo.svg" alt="SolidWork Contao Extra Elements" width="160">
+</p>
+
 # SolidWork Contao Extra Elements Bundle
 
 Dieses Bundle erweitert Contao 5.3 um zusätzliche Inhaltselemente (und perspektivisch Frontend-Module) auf Basis von Twig-Templates. Ziel ist es, häufig benötigte Bausteine schlank, konsistent und updatefreundlich bereitzustellen.
