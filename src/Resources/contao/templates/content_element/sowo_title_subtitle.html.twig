@@ -6,14 +6,14 @@
 {% block subtitle_top %}
     {% if isAbove %}
         <div class="{% block subtitle_top_class %}sowo-headline-subline sowo-headline-subline--top{% endblock %}">
-            <span class="{% block subtitle_top_text_class %}sowo-headline-subline--top-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
+            <span class="{% block subtitle_top_text_class %}sowo-headline-subline--top-text{% endblock %}">{{ sowo_subtitle }}</span>
         </div>
     {% endif %}
 {% endblock %}
 
 {% block title %}
     <{{ tag }} class="{% block title_class %}content-headline headline-title{% endblock %}">
-    {{ sowo_title|raw }}
+    {{ sowo_title }}
     </{{ tag }}>
 {% endblock %}
 
