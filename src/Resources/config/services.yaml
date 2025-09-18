@@ -1,14 +1,20 @@
+# src/Resources/config/services.yaml
 services:
   _defaults:
     autowire: true
     autoconfigure: true
-    public: false
 
-  # Alle PHP-Klassen des Bundles als Services laden
+  # gezielt nur Klassen-Namespaces scannen
+  SolidWork\ContaoExtraElementsBundle\ContentElement\:
+    resource: '../../ContentElement/*'
+
+  SolidWork\ContaoExtraElementsBundle\Controller\:
+    resource: '../../Controller/*'
+
+  SolidWork\ContaoExtraElementsBundle\EventListener\:
+    resource: '../../EventListener/*'
+
+  # Globales Exclude als Fallback (falls du später breiter lädst)
   SolidWork\ContaoExtraElementsBundle\:
-    resource: '../../'         # von src/Resources/config/ zwei Ebenen hoch -> src/
-    exclude:
-      # Contao-Ressourcen sind KEINE Services -> ausschließen
-      - '../../contao'
-      - '../../contao/*'
-      - '../../contao/{dca,languages,templates}'
+    resource: '../../*'
+    exclude: '../../{DependencyInjection,Entity,Resources,Tests}'
