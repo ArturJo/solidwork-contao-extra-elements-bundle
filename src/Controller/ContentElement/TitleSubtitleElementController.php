@@ -9,7 +9,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category: 'solidwork', type: 'sowo_title_subtitle')]
+#[AsContentElement(category: 'solidwork', type: 'sowo_title_subtitle_2')]
 class TitleSubtitleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
