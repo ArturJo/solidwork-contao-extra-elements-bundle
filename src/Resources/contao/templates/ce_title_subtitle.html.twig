@@ -3,18 +3,26 @@
 {% set tag = sowo_headline_level in allowed ? sowo_headline_level : 'h2' %}
 {% set isAbove = sowo_subtitle_position == 'above' %}
 
-{% if isAbove %}
-    <div class="headline-subline headline-subline--top">
-        <span class="headline-subline--top-text">{{ sowo_subtitle|raw }}</span>
-    </div>
-{% endif %}
+{% block ce_title_subtitle %}
+    {% block subtitle_top %}
+        {% if isAbove %}
+            <div class="{% block subtitle_top_class %}sowo-headline-subline sowo-headline-subline--top{% endblock %}">
+                <span class="{% block subtitle_top_text_class %}sowo-headline-subline--top-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
+            </div>
+        {% endif %}
+    {% endblock %}
 
-<{{ tag }} class="content-headline headline-title mb-2">
-{{ sowo_title|raw }}
-</{{ tag }}>
+    {% block title %}
+        <{{ tag }} class="{% block title_class %}content-headline headline-title{% endblock %}">
+        {{ sowo_title|raw }}
+        </{{ tag }}>
+    {% endblock %}
 
-{% if not isAbove %}
-    <div class="headline-subline headline-subline--bottom">
-        <span class="headline-subline--bottom-text">{{ sowo_subtitle|raw }}</span>
-    </div>
-{% endif %}
+    {% block subtitle_bottom %}
+        {% if not isAbove %}
+            <div class="{% block subtitle_bottom_class %}sowo-headline-subline sowo-headline-subline--bottom{% endblock %}">
+                <span class="{% block subtitle_bottom_text_class %}sowo-headline-subline--bottom-text{% endblock %}">{{ sowo_subtitle|raw }}</span>
+            </div>
+        {% endif %}
+    {% endblock %}
+{% endblock %}
