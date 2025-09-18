@@ -1,15 +1,3 @@
-# src/Resources/config/services.yaml
 services:
   _defaults:
-    autowire: true
     autoconfigure: true
-    public: false
-
-  # Alle PHP-Klassen des Bundles als Services laden
-  SolidWork\ContaoExtraElementsBundle\:
-    resource: '../../'
-    # WICHTIG: Contao-Resourcen NICHT als Services registrieren
-    exclude:
-      - '../../Resources/contao/*'
-      - '../../Resources/contao/{dca,languages,templates}'
-      - '../../Resources/config/{services.yaml,packages}'
