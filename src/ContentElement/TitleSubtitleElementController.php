@@ -1,6 +1,6 @@
 <?php
 
-namespace SolidWork\ContaoExtraElementsBundle\Controller\ContentElement;
+namespace SolidWork\ContaoExtraElementsBundle\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;

@@ -8,11 +8,11 @@ services:
   SolidWork\ContaoExtraElementsBundle\ContentElement\:
     resource: '../../ContentElement/*'
 
-  SolidWork\ContaoExtraElementsBundle\Controller\:
-    resource: '../../Controller/*'
+#  SolidWork\ContaoExtraElementsBundle\Controller\:
+#    resource: '../../Controller/*'
 
-  SolidWork\ContaoExtraElementsBundle\EventListener\:
-    resource: '../../EventListener/*'
+#  SolidWork\ContaoExtraElementsBundle\EventListener\:
+#    resource: '../../EventListener/*'
 
   # Globales Exclude als Fallback (falls du später breiter lädst)
   SolidWork\ContaoExtraElementsBundle\:
