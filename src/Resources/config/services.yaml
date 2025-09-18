@@ -8,6 +8,9 @@ services:
   SolidWork\ContaoExtraElementsBundle\ContentElement\:
     resource: '../../ContentElement/*'
 
+  SolidWork\ContaoExtraElementsBundle\DependencyInjection\:
+    resource: '../../DependencyInjection/*'
+
 #  SolidWork\ContaoExtraElementsBundle\Controller\:
 #    resource: '../../Controller/*'
 
