@@ -4,37 +4,38 @@
 
 # SolidWork Contao Extra Elements Bundle
 
-Dieses Bundle erweitert Contao 5.3 um zusätzliche Inhaltselemente (und perspektivisch Frontend-Module) auf Basis von Twig-Templates. Ziel ist es, häufig benötigte Bausteine schlank, konsistent und updatefreundlich bereitzustellen.
+Dieses Bundle erweitert Contao (getestet mit 5.3) um zusätzliche Inhaltselemente auf Basis von Twig-Templates. Ziel ist es, häufig benötigte Bausteine schlank, konsistent und updatefreundlich bereitzustellen. Weitere Inhaltselemente und ggf. Frontend‑Module sind geplant.
 
-## Enthaltene Elemente
-Aktuell enthält das Bundle folgende Inhaltselemente:
-
-- Titel + Untertitel (`ce_title_subtitle`)
-  - Felder: `headline` (Level H1–H6), `subheadline`
-  - Template: `ce_title_subtitle.html.twig`
-  - Hinweis: Das Template kann projektspezifisch überschrieben werden (siehe Abschnitt „Templates überschreiben“).
-
-Weitere Elemente und ggf. Frontend-Module sind geplant und werden nach und nach ergänzt.
+## Enthaltene Inhaltselemente
+- Titel + Untertitel (`sowo_title_subtitle`)
+  - Felder: `sowo_title` (HTML erlaubt), `sowo_subtitle` (HTML erlaubt)
+  - Optionen: `sowo_subtitle_position` (`above`|`below`), `sowo_headline_level` (`h1`–`h6`)
+  - Template: `content_element/sowo_title_subtitle.html.twig`
+  - Backend-Kategorie: „solidwork“
 
 ## Installation
 ```bash
 composer require solidwork/contao-extra-elements-bundle
 ```
-Anschließend den Contao Manager/Cache aktualisieren und bei Bedarf die Datenbank aktualisieren.
+Anschließend den Contao Manager/Cache aktualisieren und – falls erforderlich – die Datenbank aktualisieren.
 
 ## Verwendung
-1. Neues Inhaltselement in einem Artikel anlegen.
-2. Als Typ das gewünschte Element auswählen (z. B. „Titel + Untertitel“).
-3. Felder befüllen und speichern – die Ausgabe erfolgt über das zugehörige Twig-Template.
+1. In einem Artikel ein neues Inhaltselement anlegen.
+2. Als Typ in der Kategorie „solidwork“ das Element „Titel + Untertitel“ auswählen.
+3. Felder befüllen und speichern – die Ausgabe erfolgt über das Twig-Template.
 
-## Templates überschreiben
-Um die Ausgabe anzupassen, kann das Template im Projekt überschrieben werden:
+## Template anpassen/überschreiben
+Um die Ausgabe anzupassen, kann das Template projektseitig überschrieben werden:
 
-1. Template-Datei aus dem Bundle ermitteln (z. B. `ce_title_subtitle.html.twig`).
-2. Eine gleichnamige Datei im Projekt-Template-Verzeichnis anlegen (z. B. `templates/ce_title_subtitle.html.twig`).
+1. Name des Templates: `sowo_title_subtitle` (Datei liegt im Bundle unter `src/Resources/contao/templates/content_element/sowo_title_subtitle.html.twig`).
+2. Eine gleichnamige Datei im Projekt anlegen: `templates/contao/content_element/sowo_title_subtitle.html.twig`.
 3. Anpassungen vornehmen; Contao verwendet automatisch das projektseitige Template.
 
-Tipp: Eigene CSS/JS separat organisieren und versionieren, um Updates des Bundles problemlos einspielen zu können.
+Hinweis zu CSS-Klassen im Standard-Template:
+- Wrapper: `swts-title-subtitle-wrapper`
+- Titel: `swts-headline-title`
+- Untertitel oben: `swts-headline-subline swts-headline-subline--top` (Text: `swts-headline-subline--top-text`)
+- Untertitel unten: `swts-headline-subline swts-headline-subline--bottom` (Text: `swts-headline-subline--bottom-text`)
 
 ## Anforderungen
 - PHP `>= 8.1`
