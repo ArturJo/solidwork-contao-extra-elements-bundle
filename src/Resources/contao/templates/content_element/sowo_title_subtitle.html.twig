@@ -1,10 +1,13 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
 {# Variables: sowo_title (HTML), sowo_subtitle (HTML), sowo_subtitle_position ('above'|'below'), sowo_headline_level ('h1'..'h6') #}
 {% set allowed = ['h1','h2','h3','h4','h5','h6'] %}
 {% set tag = sowo_headline_level in allowed ? sowo_headline_level : 'h2' %}
 {% set isAbove = sowo_subtitle_position == 'above' %}
 
-{% block title_subtitle_wrapper %}
-    <div class="swts-title-subtitle-wrapper">
+{# Add a custom class to the default wrapper from Contao's base template #}
+{% block attributes %}{{ attributes.addClass('swts-title-subtitle-wrapper') }}{% endblock %}
+
+{% block content %}
     {% block subtitle_top %}
         {% if isAbove %}
             <div class="{% block subtitle_top_class %}swts-headline-subline swts-headline-subline--top{% endblock %}">
@@ -26,5 +29,4 @@
             </div>
         {% endif %}
     {% endblock %}
-    </div>
 {% endblock %}
