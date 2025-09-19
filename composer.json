@@ -34,7 +34,7 @@
   "extra": {
     "contao-manager-plugin": "SolidWork\\ContaoExtraElementsBundle\\ContaoManager\\Plugin",
     "branch-alias": {
-      "dev-main": "0.6.x-dev"
+      "dev-main": "1.x.x-dev"
     }
   },
   "config": {
