@@ -5,7 +5,7 @@
 {% set isAbove = sowo_subtitle_position == 'above' %}
 
 {# Add a custom class to the default wrapper from Contao's base template #}
-{% block attributes %}{{ attributes.addClass('swts-title-subtitle-wrapper').mergeWith(attributes|default) }}{% endblock %}
+{% block attributes %}{{ attributes.addClass('swts-title-subtitle-wrapper') }}{% endblock %}
 
 {% block content %}
     {% block subtitle_top %}
