@@ -6,7 +6,7 @@
 
 {% block wrapper %}
     {# eigene Klasse hinzufügen – ID/Klassen aus dem CE bleiben erhalten #}
-    {% set attributes = attributes.addClass([element_css_classes, 'swts-title-subtitle-wrapper']) %}
+    {% set attributes = attributes.addClass('swts-title-subtitle-wrapper') %}
     {{ parent() }}
 {% endblock %}
 
