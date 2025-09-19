@@ -4,11 +4,7 @@
 {% set tag = sowo_headline_level in allowed ? sowo_headline_level : 'h2' %}
 {% set isAbove = sowo_subtitle_position == 'above' %}
 
-{% block wrapper %}
-    {# eigene Klasse hinzufügen – ID/Klassen aus dem CE bleiben erhalten #}
-    {% set attributes = attributes.addClass('swts-title-subtitle-wrapper') %}
-    {{ parent() }}
-{% endblock %}
+{% set attributes = attributes.addClass('swts-title-subtitle-wrapper') %}
 
 {% block content %}
     {% block subtitle_top %}
@@ -20,7 +16,7 @@
     {% endblock %}
 
     {% block title %}
-        <{{ tag }} class="{% block title_class %}content-headline swts-headline-title{% endblock %}">
+        <{{ tag }} class="{% block title_class %}content-headline swts-headline-title neu{% endblock %}">
         {{ sowo_title|raw }}
         </{{ tag }}>
     {% endblock %}
