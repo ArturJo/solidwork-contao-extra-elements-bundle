@@ -1,0 +1,22 @@
+{# Renders the opening wrapper tag with configured ID, classes and attributes #}
+{% set tag = swwe_tag|default('div') %}
+{% set id = swwe_id|default('') %}
+{% set classes = swwe_classes|default('') %}
+{% set attrs = swwe_attributes|default({}) %}
+
+{% set attr_list = [] %}
+{% if id %}
+    {% set attr_list = attr_list|merge(["id=\"#{id|e('html_attr')}\""]) %}
+{% endif %}
+{% if classes %}
+    {% set attr_list = attr_list|merge(["class=\"#{classes|e('html_attr')}\""]) %}
+{% endif %}
+{% for name, value in attrs %}
+    {% if value is same as(true) %}
+        {% set attr_list = attr_list|merge([name]) %}
+    {% else %}
+        {% set attr_list = attr_list|merge([name ~ '="' ~ value|e('html_attr') ~ '"']) %}
+    {% endif %}
+{% endfor %}
+
+<{{ tag }}{% if attr_list|length %} {{ attr_list|join(' ')|raw }}{% endif %}>
