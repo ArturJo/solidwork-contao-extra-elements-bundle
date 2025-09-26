@@ -39,7 +39,6 @@ class ContentCallbacks
             'type' => 'swwe_wrapper_stop',
             'sorting' => $insertSorting,
             'tstamp' => time(),
-            'invisible' => $start->invisible ?? '',
         ]);
     }
 }
