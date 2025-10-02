@@ -1,26 +1,26 @@
-# src/Resources/config/services.yaml
+# config/services.yaml
 services:
   _defaults:
     autowire: true
     autoconfigure: true
 
-  # gezielt nur Klassen-Namespaces scannen
+  # Gezieltes Scannen einzelner Namespaces (Pfade relativ zu diesem File: config/)
   SolidWork\ContaoExtraElementsBundle\ContentElement\:
-    resource: '../../ContentElement/*'
+    resource: '../src/ContentElement/*'
 
   SolidWork\ContaoExtraElementsBundle\DependencyInjection\:
-    resource: '../../DependencyInjection/*'
+    resource: '../src/DependencyInjection/*'
 
 #  SolidWork\ContaoExtraElementsBundle\Controller\:
-#    resource: '../../Controller/*'
+#    resource: '../src/Controller/*'
 
 #  SolidWork\ContaoExtraElementsBundle\EventListener\:
-#    resource: '../../EventListener/*'
+#    resource: '../src/EventListener/*'
 
   # Globales Exclude als Fallback (falls du später breiter lädst)
   SolidWork\ContaoExtraElementsBundle\:
-    resource: '../../*'
-    exclude: '../../{DependencyInjection,Entity,Resources,Tests}'
+    resource: '../src/*'
+    exclude: '../src/{DependencyInjection,Entity,Resources,Tests}'
 
   # Stelle sicher, dass der Callback-Dienst öffentlich ist (Contao ruft ihn direkt aus dem Container auf)
   SolidWork\ContaoExtraElementsBundle\Backend\LabelCallbacks:
