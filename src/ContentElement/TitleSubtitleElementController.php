@@ -4,15 +4,15 @@ namespace SolidWork\ContaoExtraElementsBundle\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
-use Contao\Template;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 
-#[AsContentElement(category: 'solidwork', type: 'sowo_title_subtitle', template: 'sowo_title_subtitle')]
+#[AsContentElement(category: 'solidwork', type: 'sowo_title_subtitle', template: 'content_element/sowo_title_subtitle')]
 class TitleSubtitleElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $template->sowo_title = (string)($model->sowo_title ?? '');
         $template->sowo_subtitle = (string)($model->sowo_subtitle ?? '');

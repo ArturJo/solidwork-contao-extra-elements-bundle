@@ -21,3 +21,7 @@ services:
   SolidWork\ContaoExtraElementsBundle\:
     resource: '../../*'
     exclude: '../../{DependencyInjection,Entity,Resources,Tests}'
+
+  # Stelle sicher, dass der Callback-Dienst öffentlich ist (Contao ruft ihn direkt aus dem Container auf)
+  SolidWork\ContaoExtraElementsBundle\Backend\LabelCallbacks:
+    public: true
