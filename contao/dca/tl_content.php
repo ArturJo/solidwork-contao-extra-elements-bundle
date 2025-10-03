@@ -1,6 +1,5 @@
 <?php
 // contao/dca/tl_content.php
-$GLOBALS['TL_CTE']['solidwork']['sowo_title_subtitle'] = \Solidwork\ContaoExtraElementsBundle\src\ContentElement\TitleSubtitleContentElement::class;
 
 // Palette für den Typ registrieren
 $GLOBALS['TL_DCA']['tl_content']['palettes']['sowo_title_subtitle'] =
