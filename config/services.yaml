@@ -1,14 +1,9 @@
-# config/services.yaml
 services:
   _defaults:
     autowire: true
     autoconfigure: true
 
-  # Globales Exclude als Fallback (falls du später breiter lädst)
+  # These excludes are not really needed as you don't have anything to exclude - Just adding the Model in this case
   SolidWork\ContaoExtraElementsBundle\:
     resource: '../src/*'
-    exclude: '../src/{DependencyInjection,Entity,Resources,Tests}'
-
-  # Stelle sicher, dass der Callback-Dienst öffentlich ist (Contao ruft ihn direkt aus dem Container auf)
-  SolidWork\ContaoExtraElementsBundle\Backend\LabelCallbacks:
-    public: true
+    exclude: '../src/{Model}'

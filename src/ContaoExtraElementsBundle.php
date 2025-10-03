@@ -1,5 +1,7 @@
 <?php
-// src/ContaoExtraElementsBundle.php
+
+declare(strict_types=1);
+
 namespace SolidWork\ContaoExtraElementsBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
