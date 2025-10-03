@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SolidWork\ContaoExtraElementsBundle\Controller\ContentElement;
 
 use Contao\ContentModel;
@@ -9,7 +11,7 @@ use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category: 'solidwork', type: 'sowo_title_subtitle', template: 'content_element/sowo_title_subtitle')]
+#[AsContentElement(type: 'sowo_title_subtitle', category: 'solidwork', template: 'content_element/sowo_title_subtitle')]
 class TitleSubtitleElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
