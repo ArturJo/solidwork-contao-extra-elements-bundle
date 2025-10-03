@@ -11,18 +11,17 @@ Kompatibilität: getestet mit Contao 5.3 (siehe composer.json).
 ## Features
 - Neues Inhaltselement „Titel + Untertitel“ (`sowo_title_subtitle`).
 - Saubere Twig-Templates mit leicht überschreibbaren Blöcken/Klassen.
-- Kleine Backend-Verbesserungen: IDs in Listenansichten (Seiten, Artikel, Module) sichtbarer machen.
 
 ## Enthaltenes Inhaltselement: Titel + Untertitel
 - Felder: `sowo_title` (HTML erlaubt), `sowo_subtitle` (HTML erlaubt)
 - Optionen: `sowo_subtitle_position` (`above`|`below`, Default: `below`), `sowo_headline_level` (`h1`–`h6`, Default: `h2`)
-- Template-Key: `sowo_title_subtitle`
-- Original-Template-Datei: `src/Resources/contao/templates/content_element/sowo_title_subtitle.html.twig`
+- Template-Key: `sowo_title_subtitle` (interner Name: `content_element/sowo_title_subtitle`)
+- Original-Template-Datei (im Bundle): `templates/content_element/sowo_title_subtitle.html.twig` (alternativ vorhanden unter `contao/templates/content_element/sowo_title_subtitle.html.twig`)
 - Backend-Kategorie: „solidwork“
 
 ### Ausgabe (CSS-Klassen im Standard-Template)
-- Wrapper: `swts-title-subtitle-wrapper`
-- Titel: `swts-headline-title`
+- Kein eigener Wrapper-Container: Das Bundle fügt lediglich die Klasse `swts-title-subtitle-wrapper` zu den bestehenden CE-Wrapper-Attributen hinzu (über den `wrapper`-Block des Contao-Basis-Templates).
+- Titel: `content-headline swts-headline-title`
 - Untertitel oben: `swts-headline-subline swts-headline-subline--top` (Text: `swts-headline-subline--top-text`)
 - Untertitel unten: `swts-headline-subline swts-headline-subline--bottom` (Text: `swts-headline-subline--bottom-text`)
 
@@ -46,13 +45,6 @@ Um die Ausgabe anzupassen, kann das Template projektseitig überschrieben werden
 
 > Tipp: Die Twig-Blöcke `subtitle_top`, `title`, `subtitle_bottom` und die jeweiligen `*_class`-Blöcke erlauben feine Anpassungen ohne das komplette Markup kopieren zu müssen.
 
-## Backend-Verbesserungen (ID-Anzeige)
-Dieses Bundle liefert optionale Label-Callbacks, die in Listenansichten die jeweilige ID anhängen (z. B. nützlich zur schnellen Referenz):
-- Seiten (tl_page)
-- Artikel (tl_article)
-- Module (tl_module)
-
-Hinweis: Die Callbacks befinden sich in `src/Backend/LabelCallbacks.php`. Je nach Projekt-Setup können sie in eigenen DCA-Dateien eingebunden/aktiviert werden.
 
 ## Anforderungen
 - PHP `>= 8.1`
@@ -67,4 +59,10 @@ Hinweis: Die Callbacks befinden sich in `src/Backend/LabelCallbacks.php`. Je nac
 - Issues/Bugtracker: https://github.com/ArturJo/solidwork-contao-extra-elements-bundle/issues
 
 ## Lizenz
-MIT-Lizenz. Siehe LICENSE im Repository.
+GNU Lesser General Public License v2.1 (LGPL-2.1). Siehe LICENSE im Repository.
+
+### Lizenz-Variante: -only vs -or-later
+- "-only" bedeutet, dass die Software ausschließlich unter genau dieser Lizenzversion (hier: 2.1) steht. Neuere Lizenzversionen sind nicht automatisch eingeschlossen.
+- "-or-later" bedeutet, dass wahlweise auch jede spätere Version der Lizenz verwendet werden darf (z. B. 2.1 oder jede spätere Version).
+
+Dieses Bundle verwendet aktuell die SPDX-Angabe "LGPL-2.1-or-later" in der composer.json, d. h. Version 2.1 oder jede spätere Version ist zulässig.
