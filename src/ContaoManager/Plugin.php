@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SolidWork\ContaoExtraElementsBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -10,7 +12,7 @@ use SolidWork\ContaoExtraElementsBundle\ContaoExtraElementsBundle;
 
 class Plugin implements BundlePluginInterface
 {
-    public function getBundles(ParserInterface $parser)
+    public function getBundles(ParserInterface $parser): array
     {
         return [
             BundleConfig::create(ContaoExtraElementsBundle::class)
