@@ -6,4 +6,4 @@ services:
   # These excludes are not really needed as you don't have anything to exclude - Just adding the Model in this case
   SolidWork\ContaoExtraElementsBundle\:
     resource: '../src/*'
-    exclude: '../src/{Model}'
+    exclude: '../src/{Model,ContaoExtraElementsBundle.php}'
