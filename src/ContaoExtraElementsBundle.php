@@ -2,8 +2,8 @@
 // src/ContaoExtraElementsBundle.php
 namespace SolidWork\ContaoExtraElementsBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class ContaoExtraElementsBundle extends Bundle
+class ContaoExtraElementsBundle extends AbstractBundle
 {
 }
